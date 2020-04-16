@@ -8,10 +8,6 @@ import MtruckModal from '../modal/MtruckModal';
 import LtruckModal from '../modal/LtruckModal';
 import BtruckModal from '../modal/BtruckModal';
 
-import WorkerDp from '../dropdown/workerDp';
-import BoxesDp from '../dropdown/boxesDp';
-import ExtraDp from '../dropdown/extraDp';
-
 import Navbar from "../layout/Navbar.js";
 
 
@@ -28,13 +24,13 @@ class Selection extends Component {
                         <img src={logo} alt="Logo" height='120' width='120'/>
                     </logo>
 
-                        <div style={{margin: 100}}></div>
+                        {/* <div style={{margin: 10}}></div> */}
 
                         {/* FOR VEHICLE SELECTION */}
                         <div>
                             <h4>
                                 <p className="flow-text black-text text-darken-1" 
-                                    style={{fontFamily: "Arial", fontSize: 35, fontWeight: 'bold', textDecoration: 'underline'}}>
+                                    style={{fontFamily: "Arial", fontSize: 25, fontWeight: 'bold', textDecoration: 'underline'}}>
                                     Select Your Preferred Truck Size {" "}
                                     <span style={{ fontFamily: "monospace" }}></span> 🚛
                                 </p>
@@ -54,24 +50,7 @@ class Selection extends Component {
 
                         </div>
 
-                        <div style={{margin: 100}}></div>
-
-                        <h5 style={{fontFamily: 'Arial', fontSize: 35, fontWeight: 'bold', textDecoration: 'underline', marginBottom: 20}}>Select The Choices</h5>
-
-                                {/* FOR WORKER SELECTION */}
-                                <div>
-                                    <WorkerDp/>
-                                </div>
-
-                                {/* FOR BOXES SELECTION */}
-                                <div>
-                                    <BoxesDp/> 
-                                </div>
-
-                                {/* FOR EXTRA SELECTION */}
-                                <div>
-                                    <ExtraDp/>
-                                </div>
+                        <div style={{margin: 10}}></div>
 
                         <div>
                             <text style={{color: 'red', fontWeight: 'bold', fontFamily: 'Arial'}}>
@@ -89,10 +68,10 @@ class Selection extends Component {
                                     flex: 1,
                                     flexDirection: "row"
                                 }}
-                                type="submit"
+                                type="submit" 
                                 className="btn btn-large white-text waves-effect waves-light hoverable blue accent-3"
                                 >
-                                Next
+                                Map
                             </Link>
 
                             <div style={{margin: 50}}></div>

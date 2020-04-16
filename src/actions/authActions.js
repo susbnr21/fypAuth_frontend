@@ -17,6 +17,17 @@ export const registerUser = (userData, history) => dispatch => {
     );
 };
 
+// Truck - get token
+export const truckValue = truckData => dispatch => {
+  axios
+    .post("/api/trucks/truck", truckData)
+    .then(res => {
+      // Set token to localStorage
+      const { token } = res.data;
+      localStorage.setItem(" ", token);
+    })
+};
+
 // Login - get user token
 export const loginUser = userData => dispatch => {
   axios
