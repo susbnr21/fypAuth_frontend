@@ -10,16 +10,6 @@ import Navbar from "../layout/Navbar.js";
 
 
 class Dashboard extends Component {
-  // state = {
-  //   users: [],
-  // }
-  // componentDidMount() {
-  //   axios.get(`http://localhost:5000/usersinfo`)
-  //     .then(res => {
-  //       this.setState({users: res.data});
-  //       console.log(res);
-  //     }).catch(err => console.log('cannot access',err));
-  // }
     
   onLogoutClick = e => {
     e.preventDefault();

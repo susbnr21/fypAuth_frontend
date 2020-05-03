@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import M from 'materialize-css'; 
 import Struck from '../../assets/Struck.png';
-// import axios from 'axios';
 import { truckValue } from "../../actions/authActions";
+// import { trucksValue } from "../../actions/authActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
@@ -29,10 +29,16 @@ class StruckModal extends Component{
     };
   }
 
+  
+
   componentDidMount() {
     var elems = document.querySelectorAll('.modal');
     M.Modal.init(elems, {inDuration: 300, outDuration: 225});
     M.AutoInit();
+    const { user } = this.props.auth;
+    console.log(this.props.auth.user.name)
+    this.setState({name:user.name})
+    console.log(this.state.name)
   }
 
   handleChange = e => {
@@ -44,7 +50,7 @@ class StruckModal extends Component{
     e.preventDefault();
 
     const truckData = {
-      name: this.state.name,
+      name: this.props.auth.user.name,
       contact: this.state.contact,
       address_from: this.state.address_from,
       address_to: this.state.address_to,
@@ -61,38 +67,13 @@ class StruckModal extends Component{
 
     this.props.truckValue(truckData);
 
-    // axios.post(`http://localhost:5000/vehicles`,
-    // {
-    //   contact: `${this.state.contact}`,
-    //   address_from: `${this.state.address_from}`,
-    //   address_to: `${this.state.address_to}`,
-    //   truck_size: `${this.state.truck_size}`,
-    //   description: `${this.state.description}`,
-    //   weight: `${this.state.weight}`,
-    //   truck_space: `${this.state.truck_space}`,
-    //   capacity_furniture: `${this.state.capacity_furniture}`,
-    //   capacity_box: `${this.state.capacity_box}`
-    // },
-    // {
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json; charset=UTF-8',
-    //   },
-      
-    // })
-    //   .then( res => {
-    //     console.log(res);
-    //     console.log(res.data);
-    //   })
-    //   .catch(err => {
-    //     console.log(`This is the ${err} error.`)
-    //   })
     };
 
 
   render(){
     const { errors } = this.state;
     const { user } = this.props.auth;
+
     return(
         <div style={{display: 'inline'}}>
         

@@ -32,6 +32,10 @@ class LtruckModal extends Component{
         var elems = document.querySelectorAll('.modal');
         M.Modal.init(elems, {inDuration: 300, outDuration: 225});
         M.AutoInit();
+        const { user } = this.props.auth;
+        console.log(this.props.auth.user.name)
+        this.setState({name:user.name})
+        console.log(this.state.name)
     }
 
     handleChange = e => {
@@ -43,7 +47,7 @@ class LtruckModal extends Component{
         e.preventDefault();
 
         const truckData = {
-            name: this.state.name,
+            name: this.props.auth.user.name,
             contact: this.state.contact,
             address_from: this.state.address_from,
             address_to: this.state.address_to,
